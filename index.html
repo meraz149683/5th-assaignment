@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Emergency Hotline</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import 'tailwindcss';
+        @theme{
+            --font-inter: "Inter", sans-serif;
+            --font-hind-madurai: "Hind Madurai", sans-serif;
+            --font-roboto: "Roboto", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="font-inter">
+    <header class="p-4">
+        <div class="max-w-[1920px] mx-auto flex justify-between items-center max-sm:flex-col gap-2">
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.png" alt="logo" class="w-12">
+                <h4 class="text-xl font-bold text-[#006747]">Emergency<br>Service</h4>
+            </div>
+            <div class="flex gap-4 flex-wrap justify-center">
+                <div class="flex items-center gap-2 bg-[#ecfff0] px-6 py-2 rounded-full">
+                    <span id="heart-count" class="text-xl font-extrabold">0</span>
+                    <img src="assets/heart.png" alt="Heart" class="w-8">
+                </div>
+                <div class="flex items-center gap-2 bg-[#ecfff0] px-6 py-2 rounded-full">
+                    <span id="coin-count" class="text-xl font-extrabold">100</span>
+                    <img src="assets/coin.png" alt="Heart" class="w-8">
+                </div>
+                <div class="flex items-center gap-2 bg-[#00a63e] px-6 py-2 rounded-full">
+                    <span class="text-xl text-white"><span id="copy-count">0</span> Copy</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] p-4 text-center">
+            <img src="assets/logo-dark.png" alt="Logo" class="w-25 mx-auto">
+            <h2 class="text-white font-hind-madurai font-bold text-[2.5em]">Emergency Service Directory</h2>
+            <p class="text-white font-hind-madurai">Government Emergency Services at Your Fingertip – A Project by
+                Government of the People’s Republic of Bangladesh</p>
+        </section>
+        <section class="bg-[#f5fff6] min-h-screen p-4">
+            <div class="max-w-[1920px] mx-auto grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4">
+                <div class="xl:col-span-3 sm:col-span-2 grid xl:grid-cols-3
+                sm:grid-cols-2 gap-4" id="hotline"></div>
+                <div class="lg:col-span-1 sm:col-span-2 bg-base-100 card w-full shadow-sm p-4" id="history">
+                    <div class="flex justify-between items-center">
+                        <div class="text-2xl flex items-center gap-1 text-[#111]">
+                            <i class="fa-regular fa-clock"></i>
+                            <h4 class="font-bold">Call History</h4>
+                        </div>
+                        <button type="button"
+                            class="bg-[#00a63e] px-4 py-2 rounded-full text-xl text-white cursor-pointer duration-300 hover:bg-[#d4d6d5]"
+                            id="clear-history-btn">Clear</button>
+                    </div>
+                    <div class="space-y-2 mt-3" id="call-history">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
